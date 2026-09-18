@@ -48,7 +48,7 @@ sem estilo e sem fotos.
 
 ## WhatsApp
 
-Número configurado: **(12) 98708-9203**
+Número configurado ######
 
 Aparece em 4 lugares: botão "Agende seu horário", botão "Falar no
 WhatsApp" (Serviços), link do rodapé e botão verde flutuante.
@@ -57,7 +57,7 @@ Todos usam o formato `https://wa.me/5512987089203?text=MENSAGEM`, que
 abre o WhatsApp (app no celular, WhatsApp Web no computador) já na
 conversa com a mensagem preenchida — mesma lógica das integrações com
 a API oficial do WhatsApp Business. Para trocar o número, procure por
-`5512987089203` no `index.html` e substitua em todos os lugares
+`#####` no `index.html` e substitua em todos os lugares
 (55 = Brasil, 12 = DDD).
 
 ## Instagram

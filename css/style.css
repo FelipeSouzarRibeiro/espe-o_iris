@@ -228,7 +228,7 @@ section[id]{ scroll-margin-top: 100px; }
   align-items: center;
   padding: 70px 0;
 }
-.sobre-esq{ align-self: start; }
+.sobre-esq{ align-self: start; padding-left: 4cm; }
 .sobre-titulo{
   font-family: var(--corpo);
   font-weight: 300;
@@ -239,15 +239,13 @@ section[id]{ scroll-margin-top: 100px; }
   padding-bottom: 4px;
   margin-bottom: 52px;
 }
-.sobre-itens{ display: flex; flex-direction: column; gap: 22px; }
+.sobre-itens{ display: flex; flex-direction: column; gap: 22px; max-width: 360px; }
 .sobre-itens li{
   font-family: var(--display);
   font-size: clamp(0.92rem, 1.5vw, 1.15rem);
   color: var(--branco);
   line-height: 1.45;
 }
-.sobre-itens li:nth-child(2){ padding-left: 14%; }
-.sobre-itens li:nth-child(3){ padding-left: 24%; }
 
 .sobre-dir{
   grid-column: 3;
@@ -264,6 +262,7 @@ section[id]{ scroll-margin-top: 100px; }
 @media (max-width: 900px){
   .sobre-conteudo{ grid-template-columns: 1fr; gap: 42px; padding: 60px 0; }
   .sobre-dir{ grid-column: 1; }
+  .sobre-esq{ padding-left: 0; }
   .sobre-itens li:nth-child(2),
   .sobre-itens li:nth-child(3){ padding-left: 0; }
   .sobre-titulo{ margin-bottom: 30px; }
@@ -331,16 +330,57 @@ section[id]{ scroll-margin-top: 100px; }
 }
 
 /* ==========================================================================
+   SEÇÃO — ANTES E DEPOIS
+   ========================================================================== */
+.antes-depois{ padding: 20px 0 96px; background: var(--branco); }
+.antes-depois-topo{ text-align: center; margin-bottom: 26px; }
+.antes-depois-titulo{ font-size: clamp(2rem, 4vw, 3rem); }
+.antes-depois-regua{ height: 1px; background: var(--texto); opacity: 0.55; margin-bottom: 48px; }
+.antes-depois-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.foto-moldura > img{
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.foto-moldura:hover > img{ transform: scale(1.04); }
+.foto-placeholder{
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bege-claro);
+  border: 1px dashed var(--texto-suave) !important;
+}
+.foto-placeholder .placeholder-texto{
+  font-family: var(--display);
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  line-height: 1.4;
+}
+@media (max-width: 860px){
+  .antes-depois-grid{ grid-template-columns: 1fr 1fr; gap: 24px; max-width: 520px; margin: 0 auto; }
+}
+@media (max-width: 480px){
+  .antes-depois-grid{ grid-template-columns: 1fr; max-width: 320px; }
+}
+
+/* ==========================================================================
    SEÇÃO 4 — AVALIAÇÕES
    ========================================================================== */
-.avaliacoes{ padding: 70px 0 100px; background: var(--branco); }
+.avaliacoes{ padding: 74px 0 96px; background: var(--branco); }
 .avaliacoes-titulo{
-  font-size: clamp(1.9rem, 5vw, 3.6rem);
-  font-style: italic;
-  color: var(--marrom);
-  letter-spacing: 0.02em;
-  margin-bottom: 44px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--texto);
+  text-align: center;
+  margin-bottom: 0;
 }
+.avaliacoes-regua{ height: 1px; background: var(--texto); opacity: 0.55; margin: 26px 0 48px; }
 .avaliacoes-layout{
   display: grid;
   grid-template-columns: 0.72fr 1.28fr;
@@ -352,22 +392,28 @@ section[id]{ scroll-margin-top: 100px; }
   aspect-ratio: 3/4;
   object-fit: cover;
 }
-.avaliacoes-lista{ display: flex; flex-direction: column; gap: 26px; }
+.avaliacoes-lista{ display: block; }
 .avaliacao-card{
+  position: relative;
+  min-height: 340px;
   box-shadow: 0 2px 14px rgba(0,0,0,0.10);
   background: var(--branco);
   overflow: hidden;
 }
-/* escalonamento à direita, como no projeto do Canva */
-.avaliacao-card:nth-child(2){ margin-left: 8%; }
-.avaliacao-card:nth-child(3){ margin-left: 16%; }
-.avaliacao-card img{ width: 100%; }
+.avaliacao-slide{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  background: var(--branco);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.avaliacao-slide.ativa{ opacity: 1; }
 
 @media (max-width: 860px){
   .avaliacoes-layout{ grid-template-columns: 1fr; gap: 36px; }
   .avaliacoes-foto{ max-width: 320px; margin: 0 auto; }
-  .avaliacao-card:nth-child(2),
-  .avaliacao-card:nth-child(3){ margin-left: 0; }
+  .avaliacao-card{ min-height: 280px; }
 }
 
 /* ==========================================================================

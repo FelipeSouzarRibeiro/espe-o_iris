@@ -43,6 +43,19 @@ document.querySelectorAll(".foto-slider").forEach((slider) => {
   }
 });
 
+/* Revezamento das avaliações — uma aparece por vez, a cada 5 segundos */
+const avaliacaoSlides = document.querySelectorAll(".avaliacao-slide");
+
+if (avaliacaoSlides.length > 1) {
+  let avaliacaoIndex = 0;
+
+  setInterval(() => {
+    avaliacaoSlides[avaliacaoIndex].classList.remove("ativa");
+    avaliacaoIndex = (avaliacaoIndex + 1) % avaliacaoSlides.length;
+    avaliacaoSlides[avaliacaoIndex].classList.add("ativa");
+  }, 5000);
+}
+
 /* ==========================================================================
    NÚMERO DO WHATSAPP
    ==========================================================================

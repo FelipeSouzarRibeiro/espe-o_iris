@@ -17,6 +17,32 @@ if (menuBtn && menu) {
   });
 }
 
+/* Carrossel de fotos do hero — troca de imagem a cada 3 segundos */
+const heroSlides = document.querySelectorAll(".hero-foto .hero-slide");
+
+if (heroSlides.length > 1) {
+  let heroIndex = 0;
+
+  setInterval(() => {
+    heroSlides[heroIndex].classList.remove("ativa");
+    heroIndex = (heroIndex + 1) % heroSlides.length;
+    heroSlides[heroIndex].classList.add("ativa");
+  }, 3000);
+}
+
+/* Revezamento das fotos da galeria — cada quadro alterna entre 2 fotos a cada 3 segundos */
+document.querySelectorAll(".foto-slider").forEach((slider) => {
+  const slides = slider.querySelectorAll(".foto-slide");
+  if (slides.length > 1) {
+    let idx = 0;
+    setInterval(() => {
+      slides[idx].classList.remove("ativa");
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add("ativa");
+    }, 3000);
+  }
+});
+
 /* ==========================================================================
    NÚMERO DO WHATSAPP
    ==========================================================================

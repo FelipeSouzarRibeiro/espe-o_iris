@@ -137,6 +137,13 @@ section[id]{ scroll-margin-top: 100px; }
   width: 100%; height: 100%;
   object-fit: cover; object-position: center 22%;
 }
+/* carrossel de fotos do hero — imagens empilhadas, uma por cima da outra */
+.hero-foto .hero-slide{
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero-foto .hero-slide.ativa{ opacity: 1; }
 /* véu claro por cima da foto, para o texto branco ter leitura */
 .hero-foto::after{
   content: "";
@@ -148,10 +155,9 @@ section[id]{ scroll-margin-top: 100px; }
   width: 100%;
   padding: 50px 0 70px;
 }
-.hero-regua{
-  height: 1px;
-  background: rgba(255,255,255,0.75);
-  margin-bottom: 70px;
+.hero-topo{
+  text-align: center;
+  margin-top: 44px;
 }
 .hero-titulo{
   font-family: var(--display);
@@ -194,7 +200,7 @@ section[id]{ scroll-margin-top: 100px; }
 @media (max-width: 640px){
   .hero{ min-height: 82vh; }
   .hero-foto img{ object-position: center 18%; }
-  .hero-regua{ margin-bottom: 40px; }
+  .hero-topo{ margin-top: 26px; }
 }
 
 /* ==========================================================================
@@ -302,13 +308,21 @@ section[id]{ scroll-margin-top: 100px; }
   background: var(--branco);
   overflow: hidden;
 }
-.foto-moldura img{
+.foto-slider{
+  position: relative;
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: cover;
-  transition: transform .5s ease;
+  overflow: hidden;
 }
-.foto-moldura:hover img{ transform: scale(1.04); }
+.foto-slide{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease, transform .5s ease;
+}
+.foto-slide.ativa{ opacity: 1; }
+.foto-moldura:hover .foto-slide{ transform: scale(1.04); }
 
 @media (max-width: 860px){
   .galeria-topo{ grid-template-columns: 1fr; gap: 16px; }
@@ -363,15 +377,21 @@ section[id]{ scroll-margin-top: 100px; }
 .servicos-cabeca{ text-align: center; max-width: 620px; margin: 0 auto 50px; }
 .servicos-cabeca h2{ font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 12px; }
 .servicos-cabeca p{ color: var(--texto-suave); line-height: 1.75; font-size: 0.94rem; }
-.servicos-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.servicos-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
 .servico-card{
   background: var(--branco);
   border: 1px solid var(--linha);
   padding: 34px 30px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.servico-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 18px 34px rgba(46,42,38,0.16);
 }
 .servico-card h3{ font-size: 1.4rem; margin-bottom: 10px; }
 .servico-card p{ color: var(--texto-suave); font-size: 0.88rem; line-height: 1.75; margin: 0; }
-@media (max-width: 860px){ .servicos-grid{ grid-template-columns: 1fr; } }
+@media (max-width: 1024px){ .servicos-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px){ .servicos-grid{ grid-template-columns: 1fr; } }
 
 /* ==========================================================================
    RODAPÉ

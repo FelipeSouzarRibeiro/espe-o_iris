@@ -546,8 +546,18 @@
         </div>
       </div>
 
-      <!-- Gallery Grid featuring authentic salon photos -->
-      <div id="gallery-grid" class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 reveal-on-scroll">
+      <!-- Gallery Carousel Wrapper com Navegação Horizontal por Setas -->
+      <div class="relative w-full group/gallery">
+        <!-- Seta de Navegação: Fotos Anteriores -->
+        <button id="gallery-carousel-prev" 
+                class="gallery-arrow-btn gallery-arrow-left" 
+                aria-label="Fotos anteriores da galeria" 
+                title="Anterior">
+          <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+        </button>
+
+        <!-- Trilha Horizontal (Todas as fotos na horizontal sem quebra) -->
+        <div id="gallery-grid" class="gallery-grid gallery-carousel-track flex flex-nowrap items-stretch gap-6 overflow-x-auto scroll-smooth no-scrollbar py-3 px-1 reveal-on-scroll">
         
         <!-- Item 0: Vitrine 3D VR (Showroom Interativo de Modelos 3D com Navegação por Setas) -->
         <div class="gallery-card vitrine-card flex flex-col group select-none" data-category="vitrine">
@@ -656,6 +666,15 @@
           </a>
         </div>
 
+        </div>
+
+        <!-- Seta de Navegação: Próximas Fotos -->
+        <button id="gallery-carousel-next" 
+                class="gallery-arrow-btn gallery-arrow-right" 
+                aria-label="Próximas fotos da galeria" 
+                title="Próximo">
+          <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+        </button>
       </div>
 
       <div class="flex justify-center mt-2">

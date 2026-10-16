@@ -116,11 +116,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* -------------------------------------------------------------
-     4. CURADORIA DE RESULTADOS (GALERIA INTERATIVA COM FILTROS)
+     4. CURADORIA DE RESULTADOS (GALERIA INTERATIVA COM FILTROS E SLIDER)
      ------------------------------------------------------------- */
   const filterButtons = document.querySelectorAll('[data-filter]');
   const galleryItems = document.querySelectorAll('.gallery-card');
   const galleryGrid = document.getElementById('gallery-grid');
+  const galPrevBtn = document.getElementById('gallery-carousel-prev');
+  const galNextBtn = document.getElementById('gallery-carousel-next');
+
+  // Navegação por setas no carrossel horizontal da galeria
+  if (galleryGrid && galPrevBtn && galNextBtn) {
+    galNextBtn.addEventListener('click', () => {
+      const step = Math.min(galleryGrid.clientWidth * 0.8, 380);
+      galleryGrid.scrollBy({ left: step, behavior: 'smooth' });
+    });
+
+    galPrevBtn.addEventListener('click', () => {
+      const step = Math.min(galleryGrid.clientWidth * 0.8, 380);
+      galleryGrid.scrollBy({ left: -step, behavior: 'smooth' });
+    });
+  }
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -134,12 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('bg-primary', 'text-on-primary');
       btn.classList.remove('text-on-surface-variant', 'hover:text-on-surface');
 
-      // Toggle centered layout if vitrine is filtered
+      // Toggle layout centralizado e setas conforme o filtro
       if (galleryGrid) {
+        galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
         if (filter === 'vitrine') {
           galleryGrid.classList.add('is-vitrine-active');
+          if (galPrevBtn) galPrevBtn.style.display = 'none';
+          if (galNextBtn) galNextBtn.style.display = 'none';
         } else {
           galleryGrid.classList.remove('is-vitrine-active');
+          if (galPrevBtn) galPrevBtn.style.display = 'flex';
+          if (galNextBtn) galNextBtn.style.display = 'flex';
         }
       }
 

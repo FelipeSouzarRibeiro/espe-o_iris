@@ -620,17 +620,20 @@ a:focus-visible, button:focus-visible {
 
 /* Barra de Abas da Galeria: estritamente em linha horizontal única */
 .gallery-tabs-bar {
-  display: flex !important;
+  display: inline-flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center !important;
   white-space: nowrap !important;
+  width: fit-content !important;
+  max-width: 100% !important;
   -webkit-overflow-scrolling: touch;
 }
 
 .gallery-tabs-bar button {
   flex-shrink: 0 !important;
   white-space: nowrap !important;
+  letter-spacing: 0.08em !important;
 }
 
 /* Ocultar barra de rolagem nativa em overflows horizontais */

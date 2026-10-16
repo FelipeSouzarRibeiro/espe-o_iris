@@ -1,0 +1,16 @@
+# Duplicate nested folder from zip extraction
+espe-o_iris-main/
+backup_original/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor files
+.vscode/
+.idea/

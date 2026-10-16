@@ -1,250 +1,1064 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espaço Iris — Iris Martins | Cabeleireira em São José dos Campos</title>
-<meta name="description" content="Espaço Iris — beleza em todas as suas fases. Tratamentos de beleza profissionais para seus cabelos, com 25 anos de experiência nacional e internacional.">
-<link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Espaço Iris | Haute Coiffure & Atelier de Beleza • Iris Martins</title>
+  <meta name="description" content="Espaço Iris por Iris Martins em São José dos Campos. Tratamentos de beleza profissionais, Mega Hair Invisível, Iluminação e Camuflagem com 25 anos de experiência nacional e internacional."/>
+  <meta name="keywords" content="Espaço Iris, Iris Martins, cabeleireira em São José dos Campos, Mega Hair Invisível, Mechas, Luzes, Camuflagem de Cabelos Brancos, Realinhamento Térmico"/>
+  <meta name="author" content="Iris Martins • Espaço Iris"/>
+  <meta name="theme-color" content="#fef9ef"/>
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Espaço Iris | Haute Coiffure & Atelier de Beleza • Iris Martins"/>
+  <meta property="og:description" content="Tratamentos capilares sob medida, Mega Hair Invisível e colorimetria com atendimento privativo e individual em São José dos Campos."/>
+  <meta property="og:image" content="img/hero-iris.png"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo.png"/>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#fef9ef",
+            "surface": "#fef9ef",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8f3ea",
+            "surface-container": "#f3ede4",
+            "surface-container-high": "#ede7df",
+            "surface-container-highest": "#e7e2d9",
+            "primary": "#1d1b16",
+            "on-primary": "#ffffff",
+            "primary-container": "#2c2824",
+            "secondary": "#795830",
+            "secondary-container": "#fdcf9d",
+            "on-secondary-container": "#78572f",
+            "secondary-fixed": "#ffddb9",
+            "on-secondary-fixed": "#2b1700",
+            "on-surface": "#1d1b16",
+            "on-surface-variant": "#444748",
+            "gold-accent": "#C9A25E",
+            "gold-dark": "#9E7B36",
+            "outline": "#747878",
+            "outline-variant": "#c4c7c7"
+          },
+          fontFamily: {
+            "display-hero": ["Syne", "serif"],
+            "headline-lg": ["Syne", "serif"],
+            "headline-md": ["Syne", "serif"],
+            "headline-sm": ["Syne", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"],
+            "label-pill": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          spacing: {
+            "margin": "1.5rem",
+            "margin-md": "3rem",
+            "margin-lg": "5rem",
+            "gutter": "1.5rem",
+            "gutter-lg": "2.5rem",
+            "space-xs": "0.375rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "space-lg": "2rem",
+            "space-xl": "3.5rem"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
 
-<!-- ======================= CABEÇALHO ======================= -->
-<header class="topo">
-  <a href="#inicio" class="topo-logo">
-    <img src="img/logo.png" alt="Espaço Iris — Beleza em todas as suas fases">
-  </a>
+  <!-- ======================= 1. CABEÇALHO / HEADER ======================= -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/60 transition-all duration-300">
+    <div class="h-20 w-full max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between gap-6">
+      
+      <!-- Logo: Espaço Iris (apenas texto minimalista de alto luxo) -->
+      <a href="#inicio" class="flex items-center group flex-shrink-0">
+        <span class="font-display-hero text-base sm:text-lg font-bold uppercase tracking-[0.22em] text-on-surface whitespace-nowrap leading-none">
+          Espaço Iris
+        </span>
+      </a>
 
-  <ul class="menu" id="menu">
-    <li><a href="#galeria">Galeria</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-  </ul>
+      <!-- Desktop Navigation Menu (Alinhamento harmonioso, espaçamentos iguais e sem quebras) -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#sobre" data-section="sobre" class="font-label-caps text-xs uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors py-2 whitespace-nowrap">
+          O Atelier
+        </a>
+        <a href="#servicos" data-section="servicos" class="font-label-caps text-xs uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors py-2 whitespace-nowrap">
+          Serviços
+        </a>
+        <a href="#galeria" data-section="galeria" class="font-label-caps text-xs uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors py-2 whitespace-nowrap">
+          Galeria
+        </a>
+        <a href="#antes-depois" data-section="antes-depois" class="font-label-caps text-xs uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors py-2 whitespace-nowrap">
+          Antes &amp; Depois
+        </a>
 
-  <button class="menu-btn" id="menu-btn" aria-label="Abrir menu"><span></span></button>
-</header>
+        <!-- Botão com Dropdown para Subpáginas / Mais Opções -->
+        <div class="relative dropdown-menu-wrapper" id="nav-dropdown-wrapper">
+          <button type="button" id="nav-dropdown-btn" class="flex items-center gap-1.5 font-label-caps text-xs uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors py-2 whitespace-nowrap focus:outline-none" aria-expanded="false" aria-haspopup="true">
+            <span>Mais</span>
+            <span class="material-symbols-outlined text-[18px] transition-transform duration-300 dropdown-chevron">expand_more</span>
+          </button>
+          
+          <!-- Dropdown Luxury Panel -->
+          <div class="dropdown-menu-panel" id="nav-dropdown-panel">
+            <a href="#experiencia" class="dropdown-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-surface-container transition-colors group/item">
+              <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-on-primary transition-colors flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">nest_eco_leaf</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-[11px] uppercase tracking-[0.14em] text-on-surface font-semibold whitespace-nowrap">Experiência Privativa</span>
+                <span class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Atelier calmo e acolhedor</span>
+              </div>
+            </a>
+            
+            <a href="#avaliacoes" class="dropdown-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-surface-container transition-colors group/item">
+              <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-on-primary transition-colors flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">star</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-[11px] uppercase tracking-[0.14em] text-on-surface font-semibold whitespace-nowrap">Depoimentos</span>
+                <span class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Avaliações 5.0 no Google</span>
+              </div>
+            </a>
 
-<main>
+            <a href="#contato" class="dropdown-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-surface-container transition-colors group/item">
+              <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover/item:bg-secondary group-hover/item:text-on-primary transition-colors flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">pin_drop</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-[11px] uppercase tracking-[0.14em] text-on-surface font-semibold whitespace-nowrap">Localização &amp; Contato</span>
+                <span class="font-body-sm text-[11px] text-on-surface-variant leading-tight">São José dos Campos — SP</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
 
-  <!-- ======================= 1. HERO ======================= -->
-  <section class="hero" id="inicio">
-    <div class="hero-foto">
-      <img src="img/hero-iris.png" alt="Iris Martins no Espaço Iris" class="hero-slide ativa">
-      <img src="img/iris-cliente.png" alt="Cliente do Espaço Iris" class="hero-slide">
-      <img src="img/hero3-iris.jpg" alt="Espaço Iris" class="hero-slide">
+      <!-- CTA Button & Actions -->
+      <div class="flex items-center gap-4 flex-shrink-0">
+        <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." 
+           target="_blank" rel="noopener"
+           class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary hover:bg-secondary px-6 py-2.5 rounded-full font-label-caps text-[11px] tracking-[0.2em] transition-all duration-300 uppercase shadow-sm hover:shadow-md whitespace-nowrap flex-shrink-0">
+          <span>Agendar Horário</span>
+          <span class="material-symbols-outlined ml-1.5 text-[16px]">arrow_forward</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container transition-colors" aria-label="Abrir Menu">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer Backdrop -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] z-50 bg-surface shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out lg:hidden">
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center justify-between pb-4 border-b border-surface-container-high">
+        <div class="flex items-center gap-3">
+          <img src="img/logo.png" alt="Espaço Iris Logo" class="h-8 w-auto object-contain"/>
+          <span class="font-display-hero text-sm font-bold uppercase tracking-[0.2em] whitespace-nowrap">Espaço Iris</span>
+        </div>
+        <button id="mobile-menu-close" class="p-1 rounded-full text-on-surface-variant hover:text-on-surface" aria-label="Fechar Menu">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-2.5">
+        <a href="#sobre" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">O Atelier</a>
+        <a href="#servicos" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">Serviços</a>
+        <a href="#galeria" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">Galeria de Resultados</a>
+        <a href="#antes-depois" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">Antes &amp; Depois</a>
+        <a href="#experiencia" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">Experiência Privativa</a>
+        <a href="#avaliacoes" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">Depoimentos Google</a>
+        <a href="#contato" class="mobile-nav-link font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface py-2 hover:text-secondary transition-colors">Localização &amp; Contato</a>
+      </nav>
     </div>
 
-    <div class="hero-conteudo">
-      <div class="container">
-        <div class="hero-topo">
-          <h1 class="hero-titulo">ESPAÇO IRIS .</h1>
+    <div class="flex flex-col gap-3 pt-6 border-t border-surface-container-high">
+      <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." 
+         target="_blank" rel="noopener"
+         class="flex items-center justify-center gap-2 bg-primary text-on-primary py-3 rounded-full font-label-caps text-xs tracking-[0.18em] uppercase shadow-md">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>(12) 98708-9203</span>
+      </a>
+      <a href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener"
+         class="flex items-center justify-center gap-2 bg-surface-container text-on-surface py-3 rounded-full font-label-caps text-xs tracking-[0.18em] uppercase hover:bg-surface-container-highest transition-colors">
+        <span>@espaco__iris</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="w-full pt-20">
+
+    <!-- ======================= 2. HERO SECTION ======================= -->
+    <section id="inicio" class="relative w-full overflow-hidden bg-surface-container-low min-h-[92vh] flex flex-col justify-between -mt-20 pt-32 pb-14">
+      
+      <!-- Background Image Layer with Crossfade -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <img src="img/hero-iris.png" alt="Iris Martins Atendimento" class="hero-bg-slide active object-cover object-[center_25%] w-full h-full"/>
+        <img src="img/hero2-iris.png" alt="Resultado e Atendimento" class="hero-bg-slide object-cover object-[center_30%] w-full h-full"/>
+        <img src="img/iris-cliente.png" alt="Cliente Feliz Espaço Iris" class="hero-bg-slide object-cover object-[center_20%] w-full h-full"/>
+        
+        <!-- Gradient atmospheric overlays -->
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
+      </div>
+
+      <!-- Main Content Container -->
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 flex flex-col justify-center flex-grow py-12">
+        <div class="max-w-4xl flex flex-col gap-6">
+          
+          <!-- Hero Titles com Logo Oficial ao lado -->
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-center gap-2 sm:gap-3.5 animate-dissolve animate-delay-1">
+              <img src="img/logo-monograma.png" alt="Espaço Iris Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain flex-shrink-0 drop-shadow-sm"/>
+              <h1 class="font-display-hero text-4xl sm:text-6xl md:text-7xl font-light uppercase tracking-[0.16em] text-on-surface leading-none text-balance">
+                Espaço Iris
+              </h1>
+            </div>
+            <p class="font-display-hero text-lg sm:text-2xl tracking-[0.28em] uppercase text-secondary font-normal animate-dissolve animate-delay-2">
+              Beleza em Todas as Suas Fases
+            </p>
+          </div>
+
+          <!-- Editorial Lead Copy -->
+          <p class="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed animate-dissolve animate-delay-3">
+            Tratamentos capilares sob medida e alta precisão estética conduzidos com 25 anos de maestria nacional e internacional por Iris Martins. Uma experiência privativa onde a saúde e o movimento dos seus fios encontram o ápice da sofisticação.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-3 animate-dissolve animate-delay-4">
+            <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center bg-primary text-on-primary hover:bg-secondary px-8 py-4 rounded-full font-label-caps text-xs tracking-[0.22em] uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5">
+              <span>Agendar Horário Privativo</span>
+              <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+            </a>
+            
+            <a href="#servicos" 
+               class="inline-flex items-center justify-center bg-surface-container-highest/80 hover:bg-surface-container-highest text-on-surface px-7 py-4 rounded-full font-label-caps text-xs tracking-[0.2em] uppercase transition-all duration-300 backdrop-blur-sm border border-surface-container-high/60 hover:-translate-y-0.5">
+              <span>Conhecer Protocolos</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Feature Bar (Atendimento Individual, Privacidade, Visagismo) -->
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 mt-auto animate-dissolve animate-delay-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 bg-surface/90 backdrop-blur-xl rounded-2xl p-6 border border-surface-container-high/80 shadow-sm">
+          
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+              <span class="material-symbols-outlined text-[24px]">schedule</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-label-caps text-xs uppercase text-on-surface font-semibold tracking-[0.16em]">Atendimento Individual</span>
+              <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Estritamente com hora marcada</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+              <span class="material-symbols-outlined text-[24px]">lock_person</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-label-caps text-xs uppercase text-on-surface font-semibold tracking-[0.16em]">Privacidade Absoluta</span>
+              <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Suíte reservada &amp; acolhimento sem pressa</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+              <span class="material-symbols-outlined text-[24px]">auto_fix_high</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-label-caps text-xs uppercase text-on-surface font-semibold tracking-[0.16em]">Visagismo Exclusivo</span>
+              <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Harmonização dos seus traços e fisionomia</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================= 3. MANIFESTO & SOBRE IRIS MARTINS ======================= -->
+    <section id="sobre" class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-24 bg-background flex flex-col gap-16">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Statement & Portrait -->
+        <div class="lg:col-span-7 flex flex-col gap-6 reveal-on-scroll">
+          <blockquote class="font-headline-lg text-2xl sm:text-3xl lg:text-4xl tracking-[0.03em] text-on-surface leading-snug font-normal">
+            “Não é só sobre mudar o cabelo. É sobre mudar o que você sente quando se olha no espelho com segurança, leveza e magnitude.”
+          </blockquote>
+
+          <div class="flex items-center gap-3 pt-1">
+            <div class="w-10 h-0.5 bg-secondary"></div>
+            <span class="font-headline-sm text-sm uppercase tracking-[0.2em] font-semibold text-on-surface">Iris Martins</span>
+            <span class="font-label-pill text-[10px] uppercase text-on-surface-variant tracking-[0.2em] bg-surface-container px-2.5 py-1 rounded-full">Hair Artist &amp; Visagista</span>
+          </div>
+
+          <p class="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Construído sob a premissa da alta-costura capilar, o Espaço Iris rejeita a produção em massa e salões ruidosos. Cada formulação, mecha e aplicação de mega hair é tratada como uma obra de arte única, pensada para valorizar a textura natural dos seus fios e ressaltar sua elegância autêntica.
+          </p>
+
+          <!-- Iris Martins Photo Card -->
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-surface-container shadow-md group mt-2">
+            <img src="img/sobre-iris.png" alt="Iris Martins Hair Specialist" class="w-full h-full object-cover object-[center_28%] transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-on-primary">
+              <div>
+                <span class="font-display-hero text-sm uppercase tracking-[0.16em] font-semibold">Iris Martins</span>
+                <p class="font-body-sm text-xs text-primary-fixed-dim">Especialista em Alta Estética Capilar &amp; Mega Hair</p>
+              </div>
+              <span class="font-label-caps text-[10px] uppercase tracking-[0.2em] bg-secondary/80 backdrop-blur-md px-3 py-1 rounded-full">25 Anos de Carreira</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-baixo">
-          <p class="hero-frase">Tratamentos de beleza profissionais para seus cabelos</p>
-          <!-- Link do WhatsApp: abre o chat já com a mensagem pronta -->
-          <a class="btn-agendar"
-             href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
-             target="_blank" rel="noopener">
-            AGENDE SEU HORÁRIO
+        <!-- Right: Metrics Grid -->
+        <div class="lg:col-span-5 flex flex-col gap-6 reveal-on-scroll">
+          <div class="bg-surface-container rounded-2xl p-8 sm:p-10 flex flex-col gap-8 shadow-sm border border-surface-container-high/80">
+            
+            <!-- Metric 1 -->
+            <div class="flex flex-col gap-2 pb-6 border-b border-surface-container-highest">
+              <div class="flex items-baseline justify-between">
+                <span class="font-display-hero text-5xl sm:text-6xl text-on-surface font-light leading-none">25</span>
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold tracking-[0.2em] bg-surface-container-high px-3 py-1 rounded-full">Tradição &amp; Vanguarda</span>
+              </div>
+              <span class="font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface font-semibold mt-1">Anos de Expertise Cosmopolita</span>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">Experiência sólida nacional e internacional em cortes de precisão, visagismo e coloração.</p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="flex flex-col gap-2 pb-6 border-b border-surface-container-highest">
+              <div class="flex items-baseline justify-between">
+                <span class="font-display-hero text-5xl sm:text-6xl text-on-surface font-light leading-none">100%</span>
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold tracking-[0.2em] bg-surface-container-high px-3 py-1 rounded-full">Exclusividade Total</span>
+              </div>
+              <span class="font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface font-semibold mt-1">Atendimento One-on-One</span>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">Apenas você e o foco absoluto de Iris Martins durante todo o tempo do seu ritual agendado.</p>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="flex flex-col gap-2">
+              <div class="flex items-baseline justify-between">
+                <span class="font-display-hero text-5xl sm:text-6xl text-on-surface font-light leading-none">0.02</span>
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold tracking-[0.2em] bg-surface-container-high px-3 py-1 rounded-full">Invisibilidade</span>
+              </div>
+              <span class="font-label-caps text-xs uppercase tracking-[0.16em] text-on-surface font-semibold mt-1">Microcápsulas Imperceptíveis</span>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">Alongamento Mega Hair com ponto ultra fino imperceptível ao toque e sem qualquer peso ou tração no couro cabeludo.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ======================= 4. PROTOCOLOS DE ASSINATURA (SERVIÇOS) ======================= -->
+    <section id="servicos" class="w-full py-24 bg-surface-container-low border-y border-surface-container-high/60">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col gap-12">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+          <div class="flex flex-col gap-2">
+            <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.25em]">Menu Haute Coiffure</span>
+            <h2 class="font-headline-lg text-3xl sm:text-4xl uppercase tracking-[0.12em] text-on-surface font-normal">Assinaturas do Atelier</h2>
+          </div>
+          <p class="font-body-md text-sm text-on-surface-variant max-w-md leading-relaxed">
+            Procedimentos executados com produtos das linhas mais prestigiadas do mundo e atendimento estritamente individualizado com hora marcada.
+          </p>
+        </div>
+
+        <!-- 4 Services Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
+          
+          <!-- Card 1: Mega Hair Invisível -->
+          <article class="luxury-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 group">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold bg-surface-container px-3 py-1 rounded-full tracking-[0.15em]">Alta Densidade</span>
+                <span class="material-symbols-outlined text-secondary text-[22px]">auto_awesome</span>
+              </div>
+              <h3 class="font-headline-md text-xl uppercase tracking-[0.08em] text-on-surface font-medium">Mega Hair Invisível</h3>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Alongamento com fios naturais nobres aplicados por técnica microscópica indetectável. Proporciona volume e comprimento sem pesar nem marcar.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3 pt-6 mt-6 border-t border-surface-container-high">
+              <div class="flex justify-between items-center text-on-surface-variant font-label-caps text-[11px]">
+                <span>Duração Média:</span>
+                <span class="text-on-surface font-semibold">3h a 4h</span>
+              </div>
+              <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20uma%20avalia%C3%A7%C3%A3o%20para%20Mega%20Hair%20Invis%C3%ADvel%20no%20Espa%C3%A7o%20Iris." 
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-between text-on-surface group-hover:text-secondary font-label-caps text-xs uppercase tracking-[0.18em] transition-colors pt-2 font-semibold">
+                <span>Reservar Protocolo</span>
+                <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Luzes & Iluminação Sob Medida -->
+          <article class="luxury-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 group">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold bg-surface-container px-3 py-1 rounded-full tracking-[0.15em]">Color Couture</span>
+                <span class="material-symbols-outlined text-secondary text-[22px]">flare</span>
+              </div>
+              <h3 class="font-headline-md text-xl uppercase tracking-[0.08em] text-on-surface font-medium">Iluminação Sob Medida</h3>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Luzes &amp; mechas personalizadas com pintura gestual refinada para dar luminosidade e movimento ao cabelo, preservando a saúde do fio.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3 pt-6 mt-6 border-t border-surface-container-high">
+              <div class="flex justify-between items-center text-on-surface-variant font-label-caps text-[11px]">
+                <span>Duração Média:</span>
+                <span class="text-on-surface font-semibold">4h a 5h</span>
+              </div>
+              <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20agenda%20para%20Luzes%20%2F%20Ilumina%C3%A7%C3%A3o%20Sob%20Medida%20no%20Espa%C3%A7o%20Iris." 
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-between text-on-surface group-hover:text-secondary font-label-caps text-xs uppercase tracking-[0.18em] transition-colors pt-2 font-semibold">
+                <span>Reservar Protocolo</span>
+                <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Camuflagem de Fios Brancos -->
+          <article class="luxury-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 group">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold bg-surface-container px-3 py-1 rounded-full tracking-[0.15em]">Harmonização Fina</span>
+                <span class="material-symbols-outlined text-secondary text-[22px]">filter_vintage</span>
+              </div>
+              <h3 class="font-headline-md text-xl uppercase tracking-[0.08em] text-on-surface font-medium">Camuflagem de Brancos</h3>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Coloração estratégica que disfarça os fios brancos com efeito supernatural e brilho cintilante, sem o aspecto chapado de cabelo "tingido".
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3 pt-6 mt-6 border-t border-surface-container-high">
+              <div class="flex justify-between items-center text-on-surface-variant font-label-caps text-[11px]">
+                <span>Duração Média:</span>
+                <span class="text-on-surface font-semibold">2h a 3h</span>
+              </div>
+              <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20protocolo%20de%20Camuflagem%20Estrat%C3%A9gica%20de%20Fios%20Brancos%20no%20Espa%C3%A7o%20Iris." 
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-between text-on-surface group-hover:text-secondary font-label-caps text-xs uppercase tracking-[0.18em] transition-colors pt-2 font-semibold">
+                <span>Reservar Protocolo</span>
+                <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Realinhamento Térmico -->
+          <article class="luxury-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 group">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <span class="font-label-pill text-[10px] uppercase text-secondary font-semibold bg-surface-container px-3 py-1 rounded-full tracking-[0.15em]">Sedosidade Nobre</span>
+                <span class="material-symbols-outlined text-secondary text-[22px]">waves</span>
+              </div>
+              <h3 class="font-headline-md text-xl uppercase tracking-[0.08em] text-on-surface font-medium">Realinhamento Térmico</h3>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Tratamento que alinha e disciplina os fios, reduzindo volume e frizz com toque acetinado, maleabilidade orgânica e resultado duradouro.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3 pt-6 mt-6 border-t border-surface-container-high">
+              <div class="flex justify-between items-center text-on-surface-variant font-label-caps text-[11px]">
+                <span>Duração Média:</span>
+                <span class="text-on-surface font-semibold">2h30 a 3h30</span>
+              </div>
+              <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20Realinhamento%20T%C3%A9rmico%20de%20Luxo%20no%20Espa%C3%A7o%20Iris." 
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-between text-on-surface group-hover:text-secondary font-label-caps text-xs uppercase tracking-[0.18em] transition-colors pt-2 font-semibold">
+                <span>Reservar Protocolo</span>
+                <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="flex justify-center pt-4">
+          <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20do%20Espa%C3%A7o%20Iris." 
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center bg-secondary text-on-primary hover:bg-gold-dark px-8 py-3.5 rounded-full font-label-caps text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-md">
+            <span class="material-symbols-outlined mr-2 text-[18px]">chat</span>
+            <span>Falar com Iris Martins no WhatsApp</span>
           </a>
         </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================= 2. GALERIA ======================= -->
-  <section class="galeria" id="galeria">
-    <div class="container">
-      <div class="galeria-topo">
-        <h2 class="galeria-titulo">Galeria</h2>
-        <a class="galeria-insta" href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener">
-          <span>Acesse nosso instagram</span>
-          <svg class="icone-insta" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="3" y="3" width="42" height="42" rx="12" stroke="#0B1A26" stroke-width="2.4"/>
-            <circle cx="24" cy="24" r="11" stroke="#0B1A26" stroke-width="2.4"/>
-            <circle cx="35.5" cy="12.5" r="1.9" fill="#0B1A26"/>
-          </svg>
-        </a>
-      </div>
-      <div class="galeria-regua"></div>
-
-      <div class="galeria-grid">
-        <a class="foto-moldura" href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener">
-          <div class="foto-slider">
-            <img src="img/galeria/trabalho-1.png" alt="Cabelo com mechas e penteado semipreso" class="foto-slide ativa">
-            <img src="img/galeria/trabalho-4.jpg" alt="Cabelo castanho com mechas e cachos" class="foto-slide">
-          </div>
-        </a>
-        <a class="foto-moldura" href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener">
-          <div class="foto-slider">
-            <img src="img/galeria/trabalho-2.jpeg" alt="Cabelo longo ondulado com iluminado" class="foto-slide ativa">
-            <img src="img/galeria/trabalho-5.jpg" alt="Corte em camadas com luzes" class="foto-slide">
-          </div>
-        </a>
-        <a class="foto-moldura" href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener">
-          <div class="foto-slider">
-            <img src="img/galeria/trabalho-3.jpeg" alt="Corte bob loiro com movimento" class="foto-slide ativa">
-            <img src="img/galeria/trabalho-6.jpg" alt="Cabelo loiro com cachos e luzes" class="foto-slide">
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= ANTES E DEPOIS ======================= -->
-  <section class="antes-depois" id="antes-depois">
-    <div class="container">
-      <div class="antes-depois-topo">
-        <h2 class="antes-depois-titulo">Antes e Depois</h2>
-      </div>
-      <div class="antes-depois-regua"></div>
-
-      <div class="antes-depois-grid">
-        <div class="foto-moldura">
-          <img src="img/antes-depois/antes-1.jpeg" alt="Cabelo antes do atendimento — pessoa 1">
-        </div>
-        <div class="foto-moldura">
-          <img src="img/antes-depois/depois-1.jpeg" alt="Cabelo depois do atendimento — pessoa 1">
-        </div>
-        <div class="foto-moldura foto-placeholder">
-          <span class="placeholder-texto">Antes<br>(pessoa 2)</span>
-        </div>
-        <div class="foto-moldura foto-placeholder">
-          <span class="placeholder-texto">Depois<br>(pessoa 2)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="sobre" id="sobre">
-    <div class="sobre-foto">
-      <img src="img/sobre-iris.png" alt="Iris Martins">
-    </div>
-
-    <div class="sobre-conteudo container">
-      <div class="sobre-esq">
-        <h2 class="sobre-titulo">Iris Martins .</h2>
-        <ul class="sobre-itens">
-          <li>25 anos de experiência nacional e internacional</li>
-          <li>Local acolhedor e de fácil acesso</li>
-          <li>Agendamento de horário para maior privacidade e conforto</li>
-        </ul>
-      </div>
-
-      <div class="sobre-dir">
-        <p class="sobre-frase">
-          Não é só sobre mudar o cabelo.<br>
-          É sobre mudar o que você sente quando se olha no espelho .
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= SERVIÇOS ======================= -->
-  <section class="servicos" id="servicos">
-    <div class="container">
-      <div class="servicos-cabeca">
-        <h2>Serviços</h2>
-        <p>Atendimento individual e com hora marcada, pensado para cuidar do seu cabelo com calma e privacidade.</p>
-      </div>
-
-      <div class="servicos-grid">
-        <article class="servico-card">
-          <h3>Mega Hair Invisível</h3>
-          <p>Alongamento com fios naturais aplicados por técnica indetectável, dando volume e comprimento sem pesar nem marcar.</p>
-        </article>
-        <article class="servico-card">
-          <h3>Camuflagem de Fios Brancos</h3>
-          <p>Coloração estratégica que disfarça os fios brancos com efeito natural, sem o aspecto de cabelo "tingido".</p>
-        </article>
-        <article class="servico-card">
-          <h3>Luzes</h3>
-          <p>Mechas e iluminações personalizadas para dar luminosidade e movimento ao cabelo, com técnica que preserva a saúde do fio.</p>
-        </article>
-        <article class="servico-card">
-          <h3>Realinhamento Térmico</h3>
-          <p>Tratamento que alinha e disciplina os fios, reduzindo volume e frizz com resultado liso e duradouro.</p>
-        </article>
-      </div>
-
-      <p style="text-align:center; margin-top:44px;">
-        <a class="btn-agendar" style="background:var(--dourado); border-bottom-color:var(--dourado);"
-           href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20do%20Espa%C3%A7o%20Iris."
-           target="_blank" rel="noopener">
-          FALAR NO WHATSAPP
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ======================= 4. AVALIAÇÕES ======================= -->
-  <section class="avaliacoes" id="avaliacoes">
-    <div class="container">
-      <h2 class="avaliacoes-titulo">Avaliações de Clientes</h2>
-      <div class="avaliacoes-regua"></div>
-
-      <div class="avaliacoes-layout">
-        <div class="avaliacoes-foto">
-          <img src="img/iris-cliente.png" alt="Cliente do Espaço Iris após atendimento">
+    <!-- ======================= 5. CURADORIA DE RESULTADOS (GALERIA) ======================= -->
+    <section id="galeria" class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-24 bg-background flex flex-col gap-12">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        <div class="flex flex-col gap-2">
+          <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.25em]">Galeria &amp; Transformações</span>
+          <h2 class="font-headline-lg text-3xl sm:text-4xl uppercase tracking-[0.12em] text-on-surface font-normal">Curadoria de Resultados</h2>
         </div>
 
-        <div class="avaliacoes-lista">
-          <div class="avaliacao-card">
-            <img src="img/avaliacoes/sylvia.png" alt="Avaliação de Sylvia Miyashima no Google" class="avaliacao-slide ativa">
-            <img src="img/avaliacoes/fabiola.png" alt="Avaliação de Fabíola no Google" class="avaliacao-slide">
-            <img src="img/avaliacoes/aline.png" alt="Avaliação de Aline Cardoso no Google" class="avaliacao-slide">
+        <!-- Filter Tabs (Alinhado estritamente em linha horizontal única sem quebras) -->
+        <div class="gallery-tabs-bar flex flex-nowrap items-center gap-1 sm:gap-2 bg-surface-container p-1 sm:p-1.5 rounded-full border border-surface-container-high/80 overflow-x-auto no-scrollbar max-w-full">
+          <!-- 1. Vitrine como primeiro -->
+          <button data-filter="vitrine" class="whitespace-nowrap shrink-0 px-4 sm:px-5 py-1.5 rounded-full bg-primary text-on-primary font-label-pill text-[11px] uppercase tracking-[0.16em] transition-all flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px]">view_in_ar</span>
+            <span>Vitrine</span>
+          </button>
+          <!-- 2. Iluminação & Mechas -->
+          <button data-filter="iluminacao" class="whitespace-nowrap shrink-0 px-4 sm:px-5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-pill text-[11px] uppercase tracking-[0.16em] transition-all">Iluminação &amp; Mechas</button>
+          <!-- 3. Cortes & Penteados -->
+          <button data-filter="cortes" class="whitespace-nowrap shrink-0 px-4 sm:px-5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-pill text-[11px] uppercase tracking-[0.16em] transition-all">Cortes &amp; Penteados</button>
+          <!-- 4. Todos por último -->
+          <button data-filter="all" class="whitespace-nowrap shrink-0 px-4 sm:px-5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-pill text-[11px] uppercase tracking-[0.16em] transition-all">Todos</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid featuring authentic salon photos -->
+      <div id="gallery-grid" class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 reveal-on-scroll">
+        
+        <!-- Item 0: Vitrine 3D VR (Showroom Interativo de Modelos 3D com Navegação por Setas) -->
+        <div class="gallery-card vitrine-card flex flex-col group select-none" data-category="vitrine">
+          <div class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container shadow-xl border border-secondary/25 vitrine-vr-container" id="vitrine-vr-container">
+            <!-- Canvas 3D que renderiza os quadros do modelo ativo -->
+            <canvas id="vitrine-vr-canvas" class="w-full h-full object-cover block pointer-events-none" width="720" height="1280"></canvas>
+
+            <!-- Seta de Navegação: Modelo Anterior -->
+            <button id="vitrine-prev-btn" class="vitrine-nav-btn vitrine-nav-prev" aria-label="Modelo anterior" title="Modelo anterior">
+              <span class="material-symbols-outlined text-[22px]">chevron_left</span>
+            </button>
+
+            <!-- Seta de Navegação: Próximo Modelo -->
+            <button id="vitrine-next-btn" class="vitrine-nav-btn vitrine-nav-next" aria-label="Próximo modelo" title="Próximo modelo">
+              <span class="material-symbols-outlined text-[22px]">chevron_right</span>
+            </button>
+
+            <!-- Barra Inferior de Identificação do Modelo e Dots Seletores -->
+            <div class="vitrine-bottom-bar absolute bottom-0 inset-x-0 p-4 pt-10 bg-gradient-to-t from-primary/85 via-primary/40 to-transparent flex flex-col items-center gap-1.5 pointer-events-none">
+              <div class="flex items-center gap-2 pointer-events-auto">
+                <span id="vitrine-model-badge" class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary font-semibold bg-surface-container-high/90 px-3 py-0.5 rounded-full border border-secondary/30 backdrop-blur-sm shadow-sm">Modelo 01 de 02</span>
+              </div>
+              <h4 id="vitrine-model-title" class="font-headline-sm text-sm uppercase tracking-[0.14em] text-on-primary font-medium text-center drop-shadow-sm">Mechas &amp; Ondas Douradas</h4>
+              
+              <!-- Dots Seletores de Modelos -->
+              <div id="vitrine-dots" class="flex items-center gap-2 pt-1 pointer-events-auto"></div>
+            </div>
           </div>
         </div>
+        
+        <!-- Item 1: Trabalho 1 -->
+        <div class="gallery-card flex flex-col gap-3 group" data-category="iluminacao">
+          <a href="#" data-lightbox-src="img/galeria/trabalho-1.png" data-lightbox-caption="Mechas iluminadas com penteado semipreso elegante • Espaço Iris" class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container block shadow-sm">
+            <img src="img/galeria/trabalho-1.png" alt="Cabelo com mechas e penteado semipreso" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 text-on-primary flex flex-col gap-1">
+              <span class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary-fixed">Caso #01 • Mechas &amp; Penteado</span>
+              <span class="font-headline-sm text-sm uppercase tracking-[0.1em] font-medium">Semipreso com Nuance Dourada</span>
+              <span class="font-body-sm text-xs text-primary-fixed-dim">Saúde preservada com reposição lipídica e definição.</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item 2: Trabalho 2 -->
+        <div class="gallery-card flex flex-col gap-3 group" data-category="iluminacao">
+          <a href="#" data-lightbox-src="img/galeria/trabalho-2.jpeg" data-lightbox-caption="Cabelo longo ondulado com morena iluminada • Espaço Iris" class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container block shadow-sm">
+            <img src="img/galeria/trabalho-2.jpeg" alt="Cabelo longo ondulado com iluminado" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 text-on-primary flex flex-col gap-1">
+              <span class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary-fixed">Caso #02 • Morena Iluminada</span>
+              <span class="font-headline-sm text-sm uppercase tracking-[0.1em] font-medium">Ondas Longas em Tons Quentes</span>
+              <span class="font-body-sm text-xs text-primary-fixed-dim">Transição suave sem marcação de raiz.</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item 3: Trabalho 3 -->
+        <div class="gallery-card flex flex-col gap-3 group" data-category="cortes">
+          <a href="#" data-lightbox-src="img/galeria/trabalho-3.jpeg" data-lightbox-caption="Corte bob loiro moderno com leveza e movimento • Espaço Iris" class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container block shadow-sm">
+            <img src="img/galeria/trabalho-3.jpeg" alt="Corte bob loiro com movimento" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 text-on-primary flex flex-col gap-1">
+              <span class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary-fixed">Caso #03 • Visagismo &amp; Corte</span>
+              <span class="font-headline-sm text-sm uppercase tracking-[0.1em] font-medium">Bob Loiro com Movimento</span>
+              <span class="font-body-sm text-xs text-primary-fixed-dim">Harmonização dos traços com pontas afiladas.</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item 4: Trabalho 4 -->
+        <div class="gallery-card flex flex-col gap-3 group" data-category="iluminacao">
+          <a href="#" data-lightbox-src="img/galeria/trabalho-4.jpg" data-lightbox-caption="Cabelo castanho com mechas mel e cachos esculpidos • Espaço Iris" class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container block shadow-sm">
+            <img src="img/galeria/trabalho-4.jpg" alt="Cabelo castanho com mechas e cachos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 text-on-primary flex flex-col gap-1">
+              <span class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary-fixed">Caso #04 • Nuance Mel</span>
+              <span class="font-headline-sm text-sm uppercase tracking-[0.1em] font-medium">Cachos Esculpidos &amp; Brilho</span>
+              <span class="font-body-sm text-xs text-primary-fixed-dim">Alta definição e maciez prolongada.</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item 5: Trabalho 5 -->
+        <div class="gallery-card flex flex-col gap-3 group" data-category="iluminacao">
+          <a href="#" data-lightbox-src="img/galeria/trabalho-5.jpg" data-lightbox-caption="Corte em camadas com luzes de contorno facial • Espaço Iris" class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container block shadow-sm">
+            <img src="img/galeria/trabalho-5.jpg" alt="Corte em camadas com luzes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 text-on-primary flex flex-col gap-1">
+              <span class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary-fixed">Caso #05 • Balayage Contour</span>
+              <span class="font-headline-sm text-sm uppercase tracking-[0.1em] font-medium">Camadas Fluidas com Luzes</span>
+              <span class="font-body-sm text-xs text-primary-fixed-dim">Luminosidade estratégica para emoldurar o rosto.</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item 6: Trabalho 6 -->
+        <div class="gallery-card flex flex-col gap-3 group" data-category="cortes">
+          <a href="#" data-lightbox-src="img/galeria/trabalho-6.jpg" data-lightbox-caption="Cabelo loiro com cachos luxuosos e pontos de luz • Espaço Iris" class="relative overflow-hidden rounded-2xl aspect-[4/5] bg-surface-container block shadow-sm">
+            <img src="img/galeria/trabalho-6.jpg" alt="Cabelo loiro com cachos e luzes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 text-on-primary flex flex-col gap-1">
+              <span class="font-label-pill text-[10px] uppercase tracking-[0.2em] text-secondary-fixed">Caso #06 • Cachos Couture</span>
+              <span class="font-headline-sm text-sm uppercase tracking-[0.1em] font-medium">Loiro Perolado &amp; Ondulação</span>
+              <span class="font-body-sm text-xs text-primary-fixed-dim">Tratamento reconstrutor intensivo pós-mecha.</span>
+            </div>
+          </a>
+        </div>
+
       </div>
-    </div>
-  </section>
 
-</main>
-
-<!-- ======================= RODAPÉ ======================= -->
-<footer class="rodape">
-  <div class="container rodape-inner">
-    <div>
-      <img src="img/logo.png" alt="Espaço Iris">
-    </div>
-
-    <div class="rodape-info">
-      <div>São José dos Campos — SP</div>
-      <div>
-        WhatsApp:
-        <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris." target="_blank" rel="noopener">
-          (12) 98708-9203
+      <div class="flex justify-center mt-2">
+        <a href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 font-label-caps text-xs uppercase tracking-[0.2em] text-on-surface hover:text-secondary transition-colors group">
+          <span>Ver acervo completo no Instagram @espaco__iris</span>
+          <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">north_east</span>
         </a>
       </div>
-      <div>
-        Instagram:
-        <a href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener">@espaco__iris</a>
-      </div>
-    </div>
 
-    <div class="rodape-links">
-      <a href="#galeria">Galeria</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
+    </section>
+
+    <!-- ======================= 6. ANTES & DEPOIS (SLIDER INTERATIVO) ======================= -->
+    <section id="antes-depois" class="w-full py-24 bg-surface-container-high/40 border-y border-surface-container-high/80">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col gap-12">
+        
+        <div class="flex flex-col items-center text-center max-w-2xl mx-auto gap-2 reveal-on-scroll">
+          <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.25em]">Transformações Visíveis</span>
+          <h2 class="font-headline-lg text-3xl sm:text-4xl uppercase tracking-[0.12em] text-on-surface font-normal">Antes e Depois</h2>
+          <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+            Arraste o divisor central para conferir a recuperação de brilho, alinhamento e vitalidade capilar em caso real tratado por Iris Martins.
+          </p>
+        </div>
+
+        <!-- Interactive Comparison Slider Container -->
+        <div class="ba-slider-container reveal-on-scroll">
+          <!-- Before image (base) -->
+          <img src="img/antes-depois/antes-1.jpeg" alt="Cabelo Antes do Atendimento" class="ba-slider-image"/>
+          <span class="ba-badge ba-badge-before">Antes</span>
+
+          <!-- After image (clipped overlay) -->
+          <div class="ba-after-wrapper" style="width: 50%;">
+            <img src="img/antes-depois/depois-1.jpeg" alt="Cabelo Depois do Atendimento" class="ba-slider-image"/>
+          </div>
+          <span class="ba-badge ba-badge-after">Depois</span>
+
+          <!-- Draggable handle -->
+          <div class="ba-handle" style="left: 50%;" aria-label="Arraste para comparar Antes e Depois"></div>
+        </div>
+
+        <div class="text-center">
+          <p class="font-body-sm text-xs text-on-surface-variant">
+            Toque ou arraste a divisória para alternar entre o resultado inicial e a finalização de alta precisão.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= 7. EXPERIÊNCIA PRIVATIVA (O ATELIER SANCTUARY) ======================= -->
+    <section id="experiencia" class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-24 bg-background">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <div class="lg:col-span-6 flex flex-col gap-6 reveal-on-scroll">
+          <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.25em]">O Conceito Sanctuary</span>
+          <h2 class="font-headline-lg text-3xl sm:text-4xl uppercase tracking-[0.12em] text-on-surface font-normal leading-snug">
+            Um Refúgio Privativo para Mulheres Exigentes
+          </h2>
+          <p class="font-body-lg text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Esqueça salões barulhentos, filas e atendimentos apressados. O Espaço Iris foi arquitetado sob o conceito de estúdio privativo: portas fechadas para você, sem fluxo de pessoas estranhas, com trilha sonora serena e café especial selecionado.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+            
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">nest_eco_leaf</span>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-xs uppercase tracking-[0.14em] text-on-surface font-semibold">Silêncio &amp; Conforto</span>
+                <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Ambiente acolhedor, calmo e climatizado.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">local_cafe</span>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-xs uppercase tracking-[0.14em] text-on-surface font-semibold">Cardápio de Cortesia</span>
+                <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Cafés especiais, chás e tratamento cortês.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">verified_user</span>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-xs uppercase tracking-[0.14em] text-on-surface font-semibold">Discrição Rigorosa</span>
+                <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Atendimento individual e com hora marcada.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5">pin_drop</span>
+              <div class="flex flex-col">
+                <span class="font-label-caps text-xs uppercase tracking-[0.14em] text-on-surface font-semibold">Endereço Privilegiado</span>
+                <span class="font-body-sm text-xs text-on-surface-variant mt-0.5">Local acolhedor e de fácil acesso em SJC.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Desejo%20conhecer%20a%20experi%C3%AAncia%20privativa%20do%20Espa%C3%A7o%20Iris." 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center bg-primary text-on-primary hover:bg-secondary px-8 py-4 rounded-full font-label-caps text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-md hover:shadow-lg">
+              <span>Solicitar Concierge de Atendimento</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Gallery Collage with Authentic Salon Photos -->
+        <div class="lg:col-span-6 flex flex-col gap-5 reveal-on-scroll">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-surface-container shadow-md group">
+            <img src="img/hero-iris.png" alt="Espaço Iris Atelier Ambiente" class="w-full h-full object-cover object-[center_24%] transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-6 text-on-primary">
+              <span class="font-display-hero text-sm uppercase tracking-[0.14em] font-semibold">Atelier Espaço Iris</span>
+              <p class="font-body-sm text-xs text-primary-fixed-dim">São José dos Campos — SP</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-5">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-surface-container shadow-sm group">
+              <img src="img/iris-cliente.png" alt="Atendimento com Sorriso Espaço Iris" class="w-full h-full object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 text-on-primary">
+                <span class="font-label-caps text-[10px] uppercase tracking-[0.16em]">Resultados Reais</span>
+              </div>
+            </div>
+
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-surface-container shadow-sm group">
+              <img src="img/hero3-iris.jpg" alt="Produtos de Alta Tecnologia Capilar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 text-on-primary">
+                <span class="font-label-caps text-[10px] uppercase tracking-[0.16em]">Tecnologia &amp; Fórmulas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= 8. AVALIAÇÕES DE CLIENTES (GOOGLE REVIEWS) ======================= -->
+    <section id="avaliacoes" class="w-full py-24 bg-surface-container-low border-y border-surface-container-high/60">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col gap-12">
+        
+        <div class="flex flex-col items-center text-center max-w-2xl mx-auto gap-2 reveal-on-scroll">
+          <div class="inline-flex items-center gap-1 text-gold-accent">
+            <span class="material-symbols-outlined text-[20px] fill-1">star</span>
+            <span class="material-symbols-outlined text-[20px] fill-1">star</span>
+            <span class="material-symbols-outlined text-[20px] fill-1">star</span>
+            <span class="material-symbols-outlined text-[20px] fill-1">star</span>
+            <span class="material-symbols-outlined text-[20px] fill-1">star</span>
+          </div>
+          <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.25em]">A Voz de Quem Confia Seu Cuidado</span>
+          <h2 class="font-headline-lg text-3xl sm:text-4xl uppercase tracking-[0.12em] text-on-surface font-normal">
+            Avaliações de Clientes no Google
+          </h2>
+          <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+            Depoimentos espontâneos de quem frequenta e recomenda o Espaço Iris em São José dos Campos.
+          </p>
+        </div>
+
+        <!-- 3 Google Reviews Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7 reveal-on-scroll">
+          
+          <!-- Review 1: Sylvia Miyashima -->
+          <div class="client-review-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 transition-all duration-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 text-gold-accent">
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                </div>
+                <span class="font-label-pill text-[10px] uppercase text-secondary tracking-[0.15em] bg-surface-container px-2.5 py-0.5 rounded-full">Google Review</span>
+              </div>
+              <p class="font-body-md text-xs sm:text-sm text-on-surface italic leading-relaxed">
+                “Íris, além de minha cabeleireira predileta, é minha amiga de longa data!!! Seu espaço é organizado, limpo, agradável e ela te proporciona tratamento único atendendo seus clientes individualmente. Recebo muitas dicas, frequento o salão mensalmente e sempre saio de lá muito feliz e satisfeita! Minhas filhas também são suas clientes! Recomendo!”
+              </p>
+            </div>
+
+            <!-- Author & Screenshot Trigger -->
+            <div class="flex items-center justify-between pt-5 mt-5 border-t border-surface-container-high">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-secondary text-on-primary flex items-center justify-center font-headline-sm text-sm font-semibold">
+                  S
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-label-caps text-xs uppercase text-on-surface font-semibold tracking-[0.1em]">Sylvia Miyashima</span>
+                  <span class="font-body-sm text-[11px] text-on-surface-variant">Local Guide • 184 avaliações</span>
+                </div>
+              </div>
+              <a href="#" data-lightbox-src="img/avaliacoes/sylvia.png" data-lightbox-caption="Avaliação de Sylvia Miyashima no Google • Espaço Iris" class="text-secondary hover:text-primary transition-colors p-1" title="Ver print da avaliação">
+                <span class="material-symbols-outlined text-[20px]">image</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Review 2: Fabíola Guimarães -->
+          <div class="client-review-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 transition-all duration-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 text-gold-accent">
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                </div>
+                <span class="font-label-pill text-[10px] uppercase text-secondary tracking-[0.15em] bg-surface-container px-2.5 py-0.5 rounded-full">Google Review</span>
+              </div>
+              <p class="font-body-md text-xs sm:text-sm text-on-surface italic leading-relaxed">
+                “Estive hoje com a Iris, excelente profissional, amei meu corte de cabelo 😍 voltarei mais vezes. Pontualidade, técnica refinada e atendimento com atenção aos mínimos detalhes.”
+              </p>
+            </div>
+
+            <!-- Author & Screenshot Trigger -->
+            <div class="flex items-center justify-between pt-5 mt-5 border-t border-surface-container-high">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-secondary text-on-primary flex items-center justify-center font-headline-sm text-sm font-semibold">
+                  F
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-label-caps text-xs uppercase text-on-surface font-semibold tracking-[0.1em]">Fabíola Guimarães</span>
+                  <span class="font-body-sm text-[11px] text-on-surface-variant">Local Guide • 52 avaliações</span>
+                </div>
+              </div>
+              <a href="#" data-lightbox-src="img/avaliacoes/fabiola.png" data-lightbox-caption="Avaliação de Fabíola no Google • Espaço Iris" class="text-secondary hover:text-primary transition-colors p-1" title="Ver print da avaliação">
+                <span class="material-symbols-outlined text-[20px]">image</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Review 3: Aline Cardoso -->
+          <div class="client-review-card bg-surface rounded-2xl p-7 flex flex-col justify-between shadow-sm border border-surface-container-high/80 transition-all duration-300">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 text-gold-accent">
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                  <span class="material-symbols-outlined text-[16px] fill-1">star</span>
+                </div>
+                <span class="font-label-pill text-[10px] uppercase text-secondary tracking-[0.15em] bg-surface-container px-2.5 py-0.5 rounded-full">Google Review</span>
+              </div>
+              <p class="font-body-md text-xs sm:text-sm text-on-surface italic leading-relaxed">
+                “Excelente atendimento, profissional muito capacitada, ameii o corte ! O ambiente é super acolhedor e a experiência de ser atendida com exclusividade faz toda a diferença.”
+              </p>
+            </div>
+
+            <!-- Author & Screenshot Trigger -->
+            <div class="flex items-center justify-between pt-5 mt-5 border-t border-surface-container-high">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-secondary text-on-primary flex items-center justify-center font-headline-sm text-sm font-semibold">
+                  A
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-label-caps text-xs uppercase text-on-surface font-semibold tracking-[0.1em]">Aline Cardoso</span>
+                  <span class="font-body-sm text-[11px] text-on-surface-variant">Local Guide • 23 avaliações</span>
+                </div>
+              </div>
+              <a href="#" data-lightbox-src="img/avaliacoes/aline.png" data-lightbox-caption="Avaliação de Aline Cardoso no Google • Espaço Iris" class="text-secondary hover:text-primary transition-colors p-1" title="Ver print da avaliação">
+                <span class="material-symbols-outlined text-[20px]">image</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= 9. BANNER FINAL DE AGENDAMENTO (CONCIERGE CTA) ======================= -->
+    <section class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-20">
+      <div class="relative w-full rounded-3xl bg-primary text-on-primary overflow-hidden p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl">
+        
+        <!-- Glowing ambient accent -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-gold-accent/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col gap-3 max-w-xl text-center md:text-left reveal-on-scroll">
+          <span class="font-label-caps text-xs uppercase tracking-[0.25em] text-secondary-fixed font-semibold">Atendimento Personalizado</span>
+          <h2 class="font-headline-lg text-2xl sm:text-4xl uppercase tracking-[0.12em] text-on-primary font-normal leading-snug">
+            Permita-se viver o ápice do cuidado capilar.
+          </h2>
+          <p class="font-body-md text-sm text-surface-container-high leading-relaxed mt-1">
+            As vagas são restritas para garantir a dedicação exclusiva de Iris Martins a cada cliente. Entre em contato direto pelo WhatsApp para consultar datas e horários disponíveis.
+          </p>
+        </div>
+
+        <div class="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+          <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20a%20Iris%20Martins." 
+             target="_blank" rel="noopener"
+             class="w-full sm:w-auto inline-flex items-center justify-center bg-on-primary text-primary hover:bg-secondary-fixed hover:text-on-secondary-fixed px-8 py-4 rounded-full font-label-caps text-xs tracking-[0.22em] uppercase transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+            <span class="material-symbols-outlined mr-2 text-[18px]">chat</span>
+            <span>Falar com Iris Martins</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= 10. RODAPÉ / FOOTER ======================= -->
+  <footer id="contato" class="w-full bg-surface-container-low text-on-surface border-t border-surface-container-high">
+    <div class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-16 flex flex-col gap-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+        
+        <!-- Brand & Description -->
+        <div class="md:col-span-5 flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <img src="img/logo.png" alt="Espaço Iris Logo" class="h-10 w-auto object-contain"/>
+            <span class="font-display-hero text-lg font-bold tracking-[0.2em] uppercase text-on-surface">Espaço Iris</span>
+          </div>
+          <p class="font-body-md text-xs sm:text-sm text-on-surface-variant max-w-md leading-relaxed">
+            Iris Martins Hair Atelier &amp; Haute Esthétique. Alta tricologia, colorimetria de precisão e rituais capilares com atendimento individualizado em São José dos Campos.
+          </p>
+          <div class="inline-flex items-center gap-2 mt-1">
+            <span class="px-3 py-1 bg-surface-container rounded-full font-label-pill text-[10px] uppercase text-secondary font-semibold tracking-[0.16em]">25 Anos de Expertise</span>
+            <span class="font-body-sm text-xs text-on-surface-variant">Nacional &amp; Internacional</span>
+          </div>
+        </div>
+
+        <!-- Location & Contact -->
+        <div class="md:col-span-4 flex flex-col gap-3">
+          <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.2em]">Localização &amp; Concierge</span>
+          <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+            São José dos Campos — SP<br/>
+            Local acolhedor e de fácil acesso com estacionamento<br/>
+            Atendimento Estritamente com Hora Marcada
+          </p>
+          <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris." 
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-on-surface hover:text-secondary transition-colors font-body-sm text-xs mt-1 font-semibold">
+            <span class="material-symbols-outlined text-[18px] text-secondary">chat</span>
+            <span>WhatsApp: (12) 98708-9203</span>
+          </a>
+        </div>
+
+        <!-- Social Media & Links -->
+        <div class="md:col-span-3 flex flex-col gap-3">
+          <span class="font-label-caps text-xs uppercase text-secondary font-semibold tracking-[0.2em]">Rede Exclusiva &amp; Rituais</span>
+          <p class="font-body-sm text-xs text-on-surface-variant">
+            Acompanhe nossas transformações diárias, resultados e bastidores do atelier.
+          </p>
+          <div class="flex items-center gap-3 mt-1">
+            <a href="https://www.instagram.com/espaco__iris/" target="_blank" rel="noopener"
+               class="font-label-caps text-xs uppercase tracking-[0.15em] text-on-surface hover:text-secondary transition-colors font-semibold">
+              @espaco__iris
+            </a>
+          </div>
+          <div class="flex flex-col gap-1.5 mt-2">
+            <a href="#sobre" class="text-xs text-on-surface-variant hover:text-on-surface transition-colors">O Atelier</a>
+            <a href="#servicos" class="text-xs text-on-surface-variant hover:text-on-surface transition-colors">Serviços &amp; Assinaturas</a>
+            <a href="#galeria" class="text-xs text-on-surface-variant hover:text-on-surface transition-colors">Galeria</a>
+            <a href="#avaliacoes" class="text-xs text-on-surface-variant hover:text-on-surface transition-colors">Avaliações Google</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-surface-container-high/80 text-on-surface-variant">
+        <span class="font-body-sm text-xs">© 2026 Espaço Iris • Iris Martins. Todos os direitos reservados.</span>
+        <span class="font-label-pill text-[10px] uppercase tracking-[0.2em]">Haute Esthétique Capillaire • São José dos Campos</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================= 11. BOTÃO FLUTUANTE DE WHATSAPP ======================= -->
+  <a href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." 
+     target="_blank" rel="noopener" 
+     class="whatsapp-floating" 
+     aria-label="Falar no WhatsApp com Iris Martins">
+    <span class="whatsapp-tooltip">Agende seu Horário</span>
+    <div class="whatsapp-floating-bubble">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+        <path d="M20.5 3.5A11 11 0 0 0 3.3 17.4L2 22l4.7-1.3A11 11 0 1 0 20.5 3.5Z" fill="#FFFFFF"/>
+        <path d="M8.3 8.6c.2-.5.5-.5.8-.5h.6c.2 0 .5 0 .7.6.3.6.9 2 1 2.1.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.2.7.2.4 1 1.5 2.1 2.4 1.4 1.1 1.9 1 2.3.9.3-.1.7-.7.9-1 .2-.3.4-.2.7-.1.3.1 1.9.9 2.2 1 .3.2.5.2.6.4.1.2.1 1-.3 1.9-.4.9-2 1.7-2.8 1.7-.7 0-2.4-.2-4.6-1.9-2.6-2-4.1-4.5-4.3-4.8-.2-.3-1.5-2-1.5-3.8 0-1.8 1-2.7 1.2-3.1Z" fill="#25D366"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- ======================= 12. LIGHTBOX MODAL ======================= -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Fechar visualização">&times;</button>
+      <img id="lightbox-img" src="" alt="Visualização de Imagem" class="lightbox-img"/>
+      <p id="lightbox-caption" class="lightbox-caption"></p>
     </div>
   </div>
 
-  <div class="container rodape-base">
-    Espaço Iris — Beleza em todas as suas fases.
-  </div>
-</footer>
-
-<!-- Botão flutuante de WhatsApp -->
-<a class="whats-flutuante"
-   href="https://wa.me/5512987089203?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20Iris%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
-   target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20.5 3.5A11 11 0 0 0 3.3 17.4L2 22l4.7-1.3A11 11 0 1 0 20.5 3.5Z" fill="#FFFFFF"/>
-    <path d="M8.3 8.6c.2-.5.5-.5.8-.5h.6c.2 0 .5 0 .7.6.3.6.9 2 1 2.1.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.2.7.2.4 1 1.5 2.1 2.4 1.4 1.1 1.9 1 2.3.9.3-.1.7-.7.9-1 .2-.3.4-.2.7-.1.3.1 1.9.9 2.2 1 .3.2.5.2.6.4.1.2.1 1-.3 1.9-.4.9-2 1.7-2.8 1.7-.7 0-2.4-.2-4.6-1.9-2.6-2-4.1-4.5-4.3-4.8-.2-.3-1.5-2-1.5-3.8 0-1.8 1-2.7 1.2-3.1Z" fill="#25D366"/>
-  </svg>
-</a>
-
-<script src="js/script.js"></script>
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
 </body>
 </html>
